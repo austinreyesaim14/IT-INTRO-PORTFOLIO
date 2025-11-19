@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio </title>
+    <style>
+        /* --- COLORS & SETTINGS --- */
+        :root {
+            --main-color: #352c55; /* Soft Purple */
+            --accent-color: #314355; /* Teal */
+            --bg-color: #dfe6e9;    /* Light Gray */
+            --text-color: #414549;  /* Dark Gray */
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth; /* This makes the scroll smooth! */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* --- NAVIGATION (Sticks to top) --- */
+        nav {
+            background: var(--white);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--main-color);
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--main-color);
+        }
+
+        /* --- SECTIONS (General) --- */
+        section {
+            padding: 60px 20px; /* Space inside sections */
+            max-width: 900px;   /* Keeps text from getting too wide */
+            margin: 0 auto;     /* Centers the section */
+        }
+
+        h2 {
+            color: var(--main-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* --- HERO (Top Banner) --- */
+        .hero {
+            background: linear-gradient(135deg, var(--main-color), var(--accent-color));
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px; /* Tall header */
+            border-radius: 0 0 50% 50% / 20px; /* Curved bottom edge */
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes image round */
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+        }
+
+        /* --- PROJECTS SECTION (Cards) --- */
+        .cards-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* Moves up slightly when hovered */
+        }
+
+        .card-img {
+            height: 150px;
+            background-color: #ddd; /* Placeholder color */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .tag {
+            background: var(--bg-color);
+            color: var(--main-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* --- CONTACT / FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--text-color);
+            color: var(--white);
+            margin-top: 60px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .about-container { flex-direction: column; text-align: center; }
+            .nav-links { display: none; } /* Hides links on very small screens for simplicity */
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Austin's Portfolio.</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#work">Hobby</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header id="home" class="hero">
+        <h1>Hi, I'm Austin Aim L. Reyes</h1>
+        <p>BSIT Student.</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="images/FF557976-ADD1-4589-A287-E9FE7A8C2E45_4_5005_c.jpeg" alt="Me" class="profile-pic">
+            <div>
+                <h3>Who am I?</h3>
+                <p>I am a student at <strong>East System College</strong>. I enjoy learning new things. In my free time, I love exploring creative projects and expanding my skills.</p>
+        </div>
+    </section>
+
+    <section id="work">
+        <h2>What to know about me?</h2>
+        <div class="cards-wrapper">
+            
+                <div class="card">
+                <div class="card-img" style="background-image: url('images/music.jpg');"></div>
+                <div class="card-content">
+                    <span class="tag">Music</span>
+                    <h3>Vocalist</h3>
+                    <p>I am a Lead Vocalist at my current Band named <strong>SHUMP.</strong> but i also play as vocals with other Bands aside from my current one.</p>
+                </div>
+            </div>
+
+
+                        <div class="card">
+                    <div class="card-img" style="background-image: url('images/imagesexploring.jpeg');"></div>
+                <div class="card-content">
+                    <span class="tag">Exploring</span>
+                    <h3>Trying new things</h3>
+                    <p>I also like spending time learning new things, it feels great to expand your knowledge by figuring something out just by yourself.</p>
+                </div>
+            </div>
+
+                        <div class="card">
+                    <div class="card-img" style="background-image: url('images/art-supplies-for-drawing-sketches-set-with-paints-vector-16149964.avif');"></div>
+                    <div class="card-content">
+                    <span class="tag">Art</span>
+                    <h3>Sketching!!!</h3>
+                    <p>It started way back when i was a child, drawing has been my very first hobby. i used to draw on canvas and now you can do it digitally? oh what a time to be alive!</p>
+                </div>
+            </div>
+
+                 <div class="card">
+                    <div class="card-img" style="background-image: url('images/cooking.jpg');"></div>    
+                    <span class="tag">Cooking</span>
+                    <h3>Food is life!</h3>
+                    <p> Well,food has always been a part of our lives right? but cooking my own food is my most favorite thing to do! you work hard for it :P</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Contact me at:</h2>
+        <p>Email: austinreyesaim@gmail.com</p>
+        <br>
+        <small>&copy; 2025 BSIT BLK-E IT-INTRO1</small>
+    </footer>
+
+</body>
+</html>
